@@ -5,14 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Barbearia Estilo Fino</title>
     <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <header>
-      <div class="container">
+      <div class="container header-content">
+        <div class="logo">
+          <img src="img/logo.png" alt="Logo da Barbearia Estilo Fino" />
+        </div>
+
+        <button class="menu-mobile-btn">☰</button>
+
         <nav>
-          <div class="logo">
-            <img src="img/logo.png" alt="Logo da Barbearia Estilo Fino" />
-          </div>
           <ul class="menu">
             <li><a href="#Serviços">Serviços</a></li>
             <li><a href="#Sobre">Sobre Nós</a></li>
@@ -24,68 +31,62 @@
 
     <main>
       <section id="banner">
-        <div class="banner-texto">
-          <h1>
-            Sua Melhor Versão Começa Aqui.<br />
-            Cortes Modernos & Barba Impecável
-          </h1>
-          <p>Especialistas em estilo masculino e atendimento de qualidade.</p>
+        <div class="container banner-content">
+          <div class="banner-texto">
+            <h1>
+              Sua Melhor Versão Começa Aqui.<br />
+              Cortes Modernos & Barba Impecável
+            </h1>
+            <p>Especialistas em estilo masculino e atendimento de qualidade.</p>
+          </div>
+          <div class="banner-imagem"></div>
         </div>
-
-        <div class="banner-imagem"></div>
       </section>
 
-      <section id="Serviços">
+      <section id="Serviços" class="container">
         <div class="corte1">
-          <img src="img/corte1.png" alt="" />
-          <h2>Corte Moderno / Degradê</h2>
-          <p>
-            As técnicas mais atuais, do fade perfeito ao estilo despojado, para
-            renovar o seu visual.
-          </p>
+          <img src="img/corte1.png" alt="Corte 1" />
+          <h2>Corte Moderno</h2>
+          <p>As técnicas mais atuais, do fade perfeito ao estilo despojado.</p>
         </div>
         <div class="corte2">
-          <img src="img/corte2.png" alt="" />
-          <h2>Barba Desenhada e Alinhada</h2>
-          <p>
-            Contornos perfeitos feitos na navalha e aparo dos fios para manter o
-            estilo sempre em dia.
-          </p>
+          <img src="img/corte2.png" alt="Corte 2" />
+          <h2>Barba Alinhada</h2>
+          <p>Contornos perfeitos feitos na navalha e aparo dos fios.</p>
         </div>
         <div class="corte3">
-          <img src="img/corte3.png" alt="" />
-          <h2>Corte Clássico na Tesoura</h2>
-          <p>
-            Para quem busca um acabamento natural e sofisticado, feito
-            exclusivamente na tesoura.
-          </p>
+          <img src="img/corte3.png" alt="Corte 3" />
+          <h2>Corte Clássico</h2>
+          <p>Para quem busca um acabamento natural e sofisticado.</p>
         </div>
       </section>
-      <section id="Sobre">
+
+      <section id="Sobre" class="container">
         <div class="card">
           <p class="card-title">Nossa História & Legado</p>
           <p class="small-desc">
             Desde 2024 definindo o estilo do homem moderno. Unimos a tradição da
-            barbearia clássica com técnicas avançadas de corte e visagismo.
-            Ambiente confortável, profissionais experientes e o resultado que
-            você procura.
+            barbearia com técnicas avançadas.
           </p>
           <div class="go-corner">
             <div class="go-arrow">→</div>
           </div>
         </div>
       </section>
-      <section id="contato">
-        <h2>Contato</h2>
-        <p>Agende seu horário ou tire suas dúvidas pelo WhatsApp.</p>
 
-        <a
-          class="botao-whatsapp"
-          href="https://wa.me/5583988853626"
-          target="_blank"
-        >
-          Falar no WhatsApp
-        </a>
+      <section id="contato">
+        <div class="container">
+          <h2>Contato</h2>
+          <p>Agende seu horário ou tire suas dúvidas pelo WhatsApp.</p>
+
+          <a
+            class="botao-whatsapp"
+            href="https://wa.me/5583988853626"
+            target="_blank"
+          >
+            Falar no WhatsApp
+          </a>
+        </div>
       </section>
     </main>
 
@@ -94,5 +95,7 @@
         <p>&copy; 2026 Barbearia Estilo Fino. Todos os direitos reservados.</p>
       </div>
     </footer>
+
+    <script src="script.js"></script>
   </body>
 </html>

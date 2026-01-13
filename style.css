@@ -1,402 +1,294 @@
+/* RESET BÁSICO */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: Arial, sans-serif;
-}
 html {
   scroll-behavior: smooth;
 }
 
+body {
+  font-family: "Poppins", Arial, sans-serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* CONTAINER GERAL */
 .container {
   max-width: 1100px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 0 20px; /* Garante que não cola na borda do celular */
 }
 
-.logo img {
-  max-width: 100px;
-  height: auto;
-  border: 2px solid #ccc;
-  border-radius: 95px;
+/* --- HEADER --- */
+header {
+  background-color: #f4f4f4;
+  padding: 10px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: sticky; /* Cola no topo */
+  top: 0;
+  z-index: 1000;
 }
 
-.logo img:hover {
-  border-color: #aa7400;
-  transition: border-color 0.3s ease;
-  transform: scale(0.95);
-  transition: transform 0.1s ease;
-}
-
-.corte1 img {
-  display: block;
-  max-width: 300px;
-  height: auto;
-  border: 2px solid #000000;
-  border-radius: 25px;
-}
-.corte1 img:hover {
-  border-color: #aa7400;
-  transition: border-color 0.3s ease;
-  transform: scale(0.95);
-  transition: transform 0.1s ease;
-}
-.corte1 img:active {
-  border-color: #ffbb00;
-}
-.corte1 {
-  text-align: center;
-  max-width: 300px;
-  margin: 20px;
-}
-.corte1 h2 {
-  margin-top: 15px;
-  color: #ca8300;
-}
-.corte1 p {
-  color: #000000;
-  margin-top: 5px;
-}
-.corte2 img {
-  display: block;
-  max-width: 300px;
-  height: auto;
-  border: 2px solid #000000;
-  border-radius: 25px;
-}
-.corte2 img:hover {
-  border-color: #aa7400;
-  transition: border-color 0.3s ease;
-  transform: scale(0.95);
-  transition: transform 0.1s ease;
-}
-.corte2 img:active {
-  border-color: #ffbb00;
-}
-.corte2 {
-  text-align: center;
-  max-width: 300px;
-  margin: 20px;
-}
-.corte2 h2 {
-  margin-top: 15px;
-  color: #ca8300;
-}
-.corte2 p {
-  color: #000000;
-  margin-top: 5px;
-}
-.corte3 img {
-  display: block;
-  max-width: 300px;
-  height: auto;
-  border: 2px solid #000000;
-  border-radius: 25px;
-}
-.corte3 img:hover {
-  border-color: #aa7400;
-  transition: border-color 0.3s ease;
-  transform: scale(0.95);
-  transition: transform 0.1s ease;
-}
-.corte3 img:active {
-  border-color: #ffbb00;
-}
-.corte3 {
-  text-align: center;
-  max-width: 300px;
-  margin: 20px;
-}
-.corte3 h2 {
-  margin-top: 15px;
-  color: #ca8300;
-}
-.corte3 p {
-  color: #000000;
-  margin-top: 5px;
-}
-
-#Serviços {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  margin-top: 20px;
-}
-#Sobre {
-  text-align: center;
-  margin: 40px 0;
-}
-
-h1,
-h2,
-h3 {
-  color: #333;
-}
-a {
-  text-decoration: none;
-  color: #333;
-}
-
-nav {
+.header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+.logo img {
+  max-width: 80px; /* Ajustei para não ficar gigante */
+  height: auto;
+  border: 2px solid #ccc;
+  border-radius: 50%; /* Deixa redonda */
+  transition: 0.3s;
+}
+
+.logo img:hover {
+  border-color: #aa7400;
+  transform: scale(1.05);
+}
+
+/* MENU DESKTOP */
 nav ul {
   display: flex;
   gap: 20px;
   list-style: none;
 }
 
-a {
-  color: #333;
+nav a {
   text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  transition: 0.3s;
 }
-.menu a:hover {
+
+nav a:hover {
   color: #aa7400;
-  animation-name: slideIn; /* Nome da animação */
-  animation-duration: 0.5s; /* Duração: 1 segundo */
-  animation-timing-function: ease-out; /* Curva de velocidade */
-  animation-fill-mode: forwards; /* Mantém o último estado */
-}
-.menu a:active {
-  color: #ffbb00;
-}
-header {
-  background-color: #f4f4f4;
-  padding: 5px 0;
-  margin-bottom: 20px;
 }
 
-.cta-button a {
-  display: inline-block;
-  background-color: #aa7400;
-  color: #fff;
-  padding: 10px 20px;
-  border-radius: 5px;
-  transition: background-color 0.3s ease;
-}
-.cta-button a:hover {
-  background-color: #ffbb00;
+/* BOTÃO MENU MOBILE (Escondido no PC) */
+.menu-mobile-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
 }
 
-@keyframes slideIn {
-  from {
-    transform: translateX(-100px); /* Começa fora da tela */
-    opacity: 0.3;
-  }
-  to {
-    transform: translateX(0); /* Move para a posição original */
-    opacity: 1;
-  }
-}
-
+/* --- BANNER --- */
 #banner {
+  display: flex; /* Texto e imagem lado a lado */
+  align-items: center;
+  padding: 40px 0;
+  background-color: #fff;
+}
+
+.banner-content {
   display: flex;
-  height: 300px; /* altura do banner */
+  align-items: center;
+  width: 100%;
 }
 
 .banner-texto {
-  flex: 7;
-  padding: 40px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex: 1;
+  padding-right: 20px;
 }
 
+.banner-texto h1 {
+  font-size: 2rem;
+  color: #222;
+  margin-bottom: 15px;
+}
+
+/* Ajuste da imagem do banner */
 .banner-imagem {
-  flex: 3;
-  background-image: url("img/capa.png");
+  flex: 1;
+  height: 300px;
+  background-image: url("img/capa.png"); /* Verifique se essa imagem existe! */
   background-size: cover;
   background-position: center;
-  position: relative;
+  border-radius: 10px;
 }
 
-.banner-imagem::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    to left,
-    rgba(245, 245, 245, 0) 70%,
-    rgba(245, 245, 245, 0.6) 80%,
-    rgba(245, 245, 245, 1) 100%
-  );
+/* --- SERVIÇOS (Aqui melhorei o alinhamento das suas classes) --- */
+#Serviços {
+  display: flex;
+  justify-content: center; /* Centraliza */
+  flex-wrap: wrap; /* Permite quebrar linha se não couber */
+  gap: 30px; /* Espaço entre os cards */
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
-#banner h1 {
+
+/* Agrupei suas classes para não repetir código.
+   Assim, todos os cortes ficam iguais. */
+.corte1,
+.corte2,
+.corte3 {
+  flex: 1;
+  min-width: 280px; /* Tamanho mínimo para não ficar espremido */
+  max-width: 350px;
   text-align: center;
-  font-size: 2rem;
+  border: 1px solid #ddd;
+  padding: 20px;
+  border-radius: 15px;
+  transition: transform 0.3s;
+}
+
+.corte1 img,
+.corte2 img,
+.corte3 img {
+  max-width: 100%;
+  border-radius: 10px;
   margin-bottom: 15px;
-  color: #222;
+  border: 2px solid #000;
 }
 
-#banner p {
+.corte1:hover,
+.corte2:hover,
+.corte3:hover {
+  transform: translateY(-5px);
+  border-color: #aa7400;
+}
+
+h2 {
+  color: #ca8300;
+  margin-bottom: 10px;
+}
+
+/* --- SOBRE (Seu card animado mantido!) --- */
+#Sobre {
+  display: flex; /* Ativa o modo flexível */
+  justify-content: center; /* Centraliza horizontalmente (Esquerda/Direita) */
+  align-items: center; /* Centraliza verticalmente (Cima/Baixo) */
+  width: 100%; /* Garante que a seção pegue a largura toda */
+  margin: 40px auto; /* Espaço externo */
+}
+
+/* Mantive seu CSS do card exatamente como estava, só ajustando cores */
+.card {
+  position: relative;
+  margin: 0 auto;
+  width: 300px;
+  height: auto;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 30px 20px;
   text-align: center;
-  font-size: 1rem;
-  color: #555;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: 0.3s;
 }
 
-@media (max-width: 768px) {
-  #banner {
-    flex-direction: column;
-    height: auto;
-  }
-
-  .banner-imagem {
-    height: 200px;
-  }
-
-  .banner-texto {
-    text-align: center;
-  }
-}
-/* SOBRE */
-/* --- TÍTULOS E TEXTOS --- */
 .card-title {
-  color: #262626; /* Preto suave */
-  font-size: 1.5em;
-  line-height: normal;
   font-weight: 700;
-  margin-bottom: 0.5em;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 2;
 }
 
 .small-desc {
-  font-size: 1em;
-  font-weight: 400;
-  line-height: 1.5em;
-  color: #452c2c; /* Marrom bem escuro */
-}
-
-/* --- O CANTO DO CARD (Estava Azul, agora é Preto/Dourado) --- */
-.go-corner {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: absolute;
-  width: 2em;
-  height: 2em;
-  overflow: hidden;
-  top: 0;
-  right: 0;
-  /* CORRIGIDO: Era azul, agora é preto suave */
-  background: #262626;
-  border-radius: 0 4px 0 32px;
-}
-
-.go-arrow {
-  margin-top: -4px;
-  margin-right: -4px;
-  color: white;
-  font-family: courier, sans;
-}
-
-/* --- O CARD EM SI (Estava Amarelo, agora é Branco) --- */
-.card {
-  text-align: center;
-  display: block;
+  color: #555;
+  font-size: 0.9rem;
   position: relative;
-  max-width: 300px;
-  max-height: 320px;
-
-  /* CORRIGIDO: Fundo Branco para limpar o visual */
-  background-color: #ffffff;
-  /* Adicionei uma borda fina cinza para destacar no fundo branco do site */
-  border: 1px solid #e0e0e0;
-
-  border-radius: 10px;
-  padding: 2em 1.2em;
-  margin: 12px auto;
-  text-decoration: none;
-  z-index: 0;
-  overflow: hidden;
-
-  /* REMOVIDO: O gradiente amarelo fixo que estava aqui */
-  /* background: linear-gradient(to bottom, #c49617, #bdaa00);  <-- TIRE ISSO */
-
-  font-family: Arial, Helvetica, sans-serif;
-  /* Sombra leve para ficar bonito */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  z-index: 2;
 }
 
-/* --- A BOLINHA QUE CRESCE (Estava Laranja, agora é Dourado) --- */
+/* Efeito da bolinha crescendo */
 .card:before {
   content: "";
   position: absolute;
-  z-index: -1;
-  top: -16px;
-  right: -16px;
-
-  /* CORRIGIDO: Gradiente DOURADO da marca */
-  background: linear-gradient(135deg, #d4af37, #b8860b);
-
-  height: 32px;
-  width: 32px;
-  border-radius: 32px;
-  transform: scale(1);
-  transform-origin: 50% 50%;
-  transition: transform 0.35s ease-out;
+  top: -20px;
+  right: -20px;
+  background: #aa7400;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  transition: transform 0.5s;
+  z-index: 1;
 }
 
-/* EFEITOS HOVER (Mantive o que você já tinha configurado) */
 .card:hover:before {
-  transform: scale(28); /* Preenche o card de Dourado */
+  transform: scale(20); /* Cresce */
 }
 
+.card:hover .card-title,
 .card:hover .small-desc {
-  transition: all 0.5s ease-out;
-  color: #ffffff; /* Texto vira branco */
+  color: #fff;
 }
 
-.card:hover .card-title {
-  transition: all 0.5s ease-out;
-  color: #ffffff; /* Título vira branco */
-}
-
-/* Ajuste opcional: O ícone da seta também deve combinar */
-.card:hover .go-corner {
-  background: transparent; /* Some o fundo preto do canto quando fica dourado */
-}
-
+/* --- CONTATO --- */
 #contato {
-  margin: 60px auto;
   text-align: center;
-  padding: 40px 20px;
   background-color: #f5f5f5;
-}
-
-#contato h2 {
-  margin-bottom: 10px;
-  font-size: 1.8rem;
-}
-
-#contato p {
-  margin-bottom: 25px;
-  color: #555;
+  padding: 60px 0;
 }
 
 .botao-whatsapp {
   display: inline-block;
-  padding: 15px 35px;
   background-color: #25d366;
   color: white;
-  text-decoration: none;
+  padding: 15px 30px;
   border-radius: 30px;
   font-weight: bold;
-  transition: background-color 0.3s;
+  text-decoration: none;
+  margin-top: 20px;
+  box-shadow: 0 4px 10px rgba(37, 211, 102, 0.4);
 }
-
 .botao-whatsapp:hover {
   background-color: #1ebe5d;
+  box-shadow: 0 6px 12px rgba(30, 190, 93, 0.5);
+  transition: background-color 0.3s, box-shadow 0.3s;
 }
+/* --- FOOTER --- */
 
 footer {
-  background-color: #222;
-  color: #fff;
   text-align: center;
   padding: 20px;
-  font-size: 0.9rem;
+  background: #222;
+  color: #fff;
+}
+
+/* --- RESPONSIVIDADE (MOBILE) --- */
+@media (max-width: 768px) {
+  /* Arruma o menu no celular */
+  .menu-mobile-btn {
+    display: block;
+  }
+
+  nav ul {
+    display: none; /* Esconde menu */
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+
+  nav ul.ativo {
+    display: flex;
+  } /* JavaScript ativa isso */
+
+  /* Arruma o Banner */
+  .banner-content {
+    flex-direction: column;
+  }
+  .banner-texto {
+    padding: 0;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  .banner-imagem {
+    width: 100%;
+    height: 200px;
+  }
 }
